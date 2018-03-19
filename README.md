@@ -34,7 +34,7 @@ UserParameter=bgpdiscovery,/usr/bin/bgpdiscovery.py
 [Session BGP monitore]
 UserParameter=bgpmon[*],/usr/bin/bgpmon.py $1
 ```
-- Grant permission to user Zabbix run vtysh commands:
+- Grant permission for the user zabbix run vtysh commands:
 ```
 pw usermod zabbix -G quagga (in my case was FreeBSD)
 ```
