@@ -15,23 +15,23 @@ This is a template to monitor peerings BGP Quagga with Zabbix.
 
 ### How it works:
 
-Using this template, Zabbix Server can discovery the BGP peerings and monitor them. I'm using Zabbix Agent on FreeBSD with Quagga running BGP.
+Using this template Zabbix Server can discovery the BGP peerings and monitor them. I'm using Zabbix Agent on FreeBSD with Quagga running BGP.
 
 ### Configuration:
 
 - Copy the scripts bgpdiscovery.py and bgpmon.py to directory /usr/bin/.
 
 - Set execute permission for both scripts:
-  chmod +x /usr/bin/bgpdiscovery.py
-  chmod +x /usr/bin/bgpmon.py
+    chmod +x /usr/bin/bgpdiscovery.py
+    chmod +x /usr/bin/bgpmon.py
 
 - On the end of zabbix_agentd.conf file put the lines below:
 
-  # BGP Discovery
-  UserParameter=bgpdiscovery,/usr/bin/bgpdiscovery.py
+  BGP Discovery
+    UserParameter=bgpdiscovery,/usr/bin/bgpdiscovery.py
 
-  # Session BGP monitore
-  UserParameter=bgpmon[*],/usr/bin/bgpmon.py $1
+  Session BGP monitore
+    UserParameter=bgpmon[*],/usr/bin/bgpmon.py $1
 
 - Grant permission to user Zabbix run vtysh commands:
 
