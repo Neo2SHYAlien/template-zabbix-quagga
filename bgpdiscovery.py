@@ -6,6 +6,5 @@ out, err = process.communicate()
 peers = re.findall( r'[0-9]+(?:\.[0-9]+){3}', out)
 out = {"data": []}
 for peer in peers:
-    if peer != '201.219.248.1': 
-        out["data"].append({ "{#BGPPEER}": peer}) 
+    out["data"].append({ "{#BGPPEER}": peer}) 
 print(json.dumps(out, indent=4, sort_keys=True))
