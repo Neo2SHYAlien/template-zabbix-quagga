@@ -1,4 +1,4 @@
-#!/usr/local/bin/python2
+#!/usr/bin/env python2
 import subprocess,re,sys
 
 arg = sys.argv[1]

@@ -1,4 +1,4 @@
-#!/usr/local/bin/python2
+#!/usr/bin/env python2
 import subprocess,re,json
 
 process = subprocess.Popen(["vtysh", "-c", "show ip bgp summary"], stdout=subprocess.PIPE)
